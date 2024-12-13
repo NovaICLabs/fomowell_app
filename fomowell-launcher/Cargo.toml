@@ -1,0 +1,28 @@
+[package]
+name = "fomowell-launcher"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ic-cdk-macros = "0.7"
+candid = "0.9"
+serde = "1.0"
+serde_json = "1.0"
+ic-cdk = "0.10"
+assert-panic = "1.0.1"
+lazy_static = "1.4.0"
+icpex_lib = { path = '../fomowell-icpex-lib', version = '0.1.0' }
+bigdecimal = "0.4"
+ic-stable-structures = "0.5.6"
+ic-cdk-timers = "0.4"
+
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+async-std = { version = "1.10.0", features = ["attributes"] }
+
+[features]
+local = []
+test = []
+prod = []

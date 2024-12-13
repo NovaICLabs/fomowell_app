@@ -1,0 +1,222 @@
+.UserInfoMain {
+  //70+78
+  position: relative;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .UserInfoHeader {
+    width: 45%;
+    width: 600px;
+
+    .HeaderTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .HeaderLeft {
+        display: flex;
+        align-items: center;
+
+        .UserIcon {
+          // width: 64px;
+          height: 34px;
+        }
+
+        .UserName {
+          font-family: '';
+          font-size: 20px;
+          color: #ffffff;
+          letter-spacing: 0;
+          font-weight: 600;
+          margin-left: 20px;
+        }
+      }
+
+      .HeaderRight {
+        margin-left: 50px;
+        font-family: '';
+        font-size: 20px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+
+    }
+
+    .HeaderBottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      background: #232634;
+      border-radius: 8px;
+      // width: 500px;
+      padding: 8px 5px;
+
+      .UserID:nth-child(2) {
+        margin-left: 25px;
+      }
+
+      .UserID {
+        display: flex;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-weight: 500;
+
+        .IconImg {
+          color: #5d52e0;
+          width: 18px;
+          height: 18px;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  .UserInfoBottom {
+    width: 45%;
+    width: 600px;
+
+    .CoinCreatedCard:nth-child(1) {
+      margin-top: 0;
+    }
+
+    .CoinHoldCard:nth-child(1) {
+      margin-top: 0;
+    }
+
+    .CoinCreatedCard {
+      background: #232634;
+      border: 1px solid rgba(151, 151, 151, 0.1);
+      border-radius: 8px;
+      margin-top: 15px;
+
+      .Content {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+
+        .LeftImg {
+          width: 100px;
+          height: 100px;
+        }
+
+        .RightContent {
+          margin-left: 30px;
+
+          .headerFrom {
+            font-family: '';
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: justify;
+            font-weight: 600;
+          }
+
+          .MarketCap {
+            font-family: '';
+            font-size: 16px;
+            color: #00CF26;
+            letter-spacing: 0;
+            text-align: justify;
+            font-weight: 600;
+            margin-top: 5px;
+          }
+
+          .replies {
+            font-family: '';
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: justify;
+            font-weight: 600;
+            margin-top: 5px;
+          }
+
+          .repliesContent {
+            font-family: '';
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: justify;
+            font-weight: 600;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .CoinHoldCard {
+      background: #232634;
+      border: 1px solid rgba(151, 151, 151, 0.1);
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+      display: flex;
+
+      .sendtoken {
+        color: #fff;
+        background-color: #808fba;
+        height: 34px;
+        border-radius: 8px;
+        text-transform: none;
+      }
+
+      .Content {
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .LeftCoinHoldImg {
+          border-radius: 62.5px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .CoinHoldInfo {
+          margin-left: 30px;
+          width: 100%;
+
+          .CoinType {
+            font-family: '';
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            font-weight: 600;
+          }
+
+          .CoinNum {
+            display: flex;
+            justify-content: space-between;
+
+            .Num {
+              font-family: '';
+              font-size: 16px;
+              color: #00CF26;
+              letter-spacing: 0;
+              text-align: justify;
+              font-weight: 600;
+            }
+
+            .Name {
+              font-family: '';
+              font-size: 16px;
+              color: #FFFFFF;
+              letter-spacing: 0;
+              text-align: justify;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import url(./iphone.less);

@@ -1,0 +1,11 @@
+[package]
+name = "icpswap-lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+candid = "0.10.7"
+ic-cdk = "0.13.2"
+serde = { version = "1.0.188", features = ["derive"] }
+icrc-ledger-types = "0.1.5"
+serde_bytes = "0.11"

@@ -1,0 +1,905 @@
+.HomeMain {
+  .godOfWellName:hover {
+    border-bottom: 1px solid #fff;
+  }
+
+  .fomoListName:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+    background-color: #fff;
+  }
+
+  10% {
+    transform: translateX(-20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  20% {
+    transform: translateX(20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  30% {
+    transform: translateX(-20px);
+    background-color: rgb(26, 26, 149);
+  }
+
+  40% {
+    transform: translateX(20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  50% {
+    transform: translateX(-20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  60% {
+    transform: translateX(20px);
+    background-color: rgb(38, 38, 155);
+  }
+
+  70% {
+    transform: translateX(-20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  80% {
+    transform: translateX(20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  90% {
+    transform: translateX(-20px);
+    background-color: rgb(44, 44, 154);
+  }
+
+  100% {
+    transform: translateX(0);
+    background-color: #fff;
+  }
+}
+
+
+.shakeable-div {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.shake {
+  animation: shake 0.8s;
+  /* Jitter animation duration */
+  animation-iteration-count: 2;
+  /* Number of jitter */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    /*  */
+  }
+
+  50% {
+    opacity: 0;
+    /*  */
+  }
+
+  100% {
+    opacity: 1;
+    /*  */
+  }
+}
+
+@media (min-width: 1550px) {
+  .HomeMain {
+    background-color: #1b1d28;
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+
+    .BuyText {
+      display: none;
+    }
+
+    .HomeCenter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+
+      .MainTitle {
+        font-family: '';
+        font-size: 22px;
+        color: #AA6EFF;
+        letter-spacing: 0;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .userInfoCard {
+        width: 420px;
+        border: 1px solid #676767;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        background: #232634;
+        border: 1px solid rgba(103, 103, 103, 0.2);
+
+        .subheade {
+          font-family: '';
+          font-size: 20px;
+          color: #ffc900;
+          letter-spacing: 0;
+          font-weight: 600;
+          width: 230px;
+          height: auto;
+        }
+
+        .CardUserContent {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          .CarduserIcon {
+            width: 100px;
+          }
+
+          .CardInfoList {
+            margin-left: 14px;
+
+            .CardInfoItem {
+              font-family: '';
+              font-size: 18px;
+              color: #ffffff;
+              letter-spacing: 0;
+              font-weight: normal;
+              width: auto;
+            }
+          }
+        }
+      }
+
+      .userInfoCard:hover {
+        background-color: #3a3a5a;
+        box-shadow: 0px 0px 15px 5px rgba(255, 215, 0, 0.6);
+      }
+
+      .SearchBox {
+        width: 581px;
+        height: 40px;
+        border: 1px solid rgba(104, 104, 104, 0.2);
+        background: #232634;
+        margin-top: 30px;
+        caret-color: #7f7f7f;
+
+        .SearchIcon {
+          height: 36px;
+          width: 36px;
+        }
+
+        input {
+          color: #676767;
+        }
+
+        input::placeholder {
+          font-size: 20px;
+          color: #7f7f7f;
+          letter-spacing: 0;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .HomeButtom {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .FilterBox {
+        font-family: '';
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+
+      .ButtomCard {
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        margin-top: 5px;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+
+        .ButtomuserInfoCard {
+          width: 456px;
+          border: 1px solid rgba(103, 103, 103, 0.2);
+          background: #232634;
+          margin-top: 20px;
+          margin-left: 10px;
+
+          .MainTitle {
+            font-family: '';
+            font-size: 16px;
+            color: #AA6EFF;
+            letter-spacing: 0;
+            font-weight: 600;
+            // padding-left: 15px;
+            cursor: pointer;
+          }
+
+          .CardUserContent {
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            font-weight: 400;
+
+            .Description {
+              word-wrap: break-word;
+              margin-top: 8px;
+              font-size: 14px;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 4;
+              /* Show three lines */
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: normal;
+            }
+
+            .amountInfo {
+              display: flex;
+              // justify-content: space-between;
+              // border-top: 1px solid rgba(103, 103, 103, 0.2);
+              padding-top: 5px;
+              color: #00CF26;
+
+              .BtmrightItem {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .amountInfoText {
+                  font-family: '';
+                  font-size: 18px;
+                  color: #00CF26;
+                  letter-spacing: 0;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
+          // width: 392px;
+          .BtmUserInfoAll {
+            position: relative;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+
+            .BtmUserInfo {
+              width: 355px;
+
+              .amountInfoText {
+                font-family: '';
+                // font-size: 18px;
+                color: #00CF26;
+                letter-spacing: 0;
+                font-weight: 600;
+                margin-right: 5px;
+              }
+
+              .MainTitle {
+                display: flex;
+                color: #AA6EFF;
+                align-items: center;
+                font-size: 18px;
+              }
+
+              .createUser {
+                margin-top: 5px;
+                // padding: 4px 8px 4px 8px;
+                color: #07cde0;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+
+                img {
+                  height: 20px;
+                  margin: 0 8px 0 8px;
+                }
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+            }
+
+            .ImgBox {
+              width: 150px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .BtmUserInfoItem {
+              display: flex;
+              justify-content: start;
+              height: 20px;
+
+              .BtmleftItem {
+                display: flex;
+                align-items: center;
+
+                .ItemInfoImg {
+                  width: 15px;
+                  height: 15px;
+                  margin-top: 5px;
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .lowBattery {
+              position: absolute;
+              width: 170px;
+              left: 50%;
+              transform: translate(-50%);
+              animation: blink 1.5s infinite;
+            }
+          }
+        }
+
+        .ButtomuserInfoCard:hover {
+          background-color: #3a3a5a;
+          box-shadow: 0px 0px 15px 5px rgba(177, 138, 255, 0.6);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1550px) {
+  .HomeMain {
+    background-color: #1b1d28;
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+
+    .BuyText {
+      display: none;
+    }
+
+    .HomeCenter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+
+      .MainTitle {
+        font-family: '';
+        font-size: 18px;
+        color: #AA6EFF;
+        letter-spacing: 0;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .userInfoCard {
+        width: 420px;
+        // border: 1px solid #676767;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        background: #232634;
+        border: 1px solid rgba(103, 103, 103, 0.2);
+
+        .subheade {
+          font-family: '';
+          font-size: 16px;
+          color: #ffc900;
+          letter-spacing: 0;
+          font-weight: 600;
+          width: 230px;
+          height: auto;
+        }
+
+        .CardUserContent {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          .CarduserIcon {
+            width: 100px;
+          }
+
+          .CardInfoList {
+            margin-left: 14px;
+
+            .CardInfoItem {
+              font-family: '';
+              font-size: 18px;
+              color: #ffffff;
+              letter-spacing: 0;
+              font-weight: normal;
+              width: auto;
+            }
+          }
+        }
+      }
+
+      .userInfoCard:hover {
+        background-color: #3a3a5a;
+        box-shadow: 0px 0px 15px 5px rgba(255, 215, 0, 0.6);
+      }
+
+      .SearchBox {
+        width: 581px;
+        height: 40px;
+        border: 1px solid rgba(104, 104, 104, 0.2);
+        background: #232634;
+        margin-top: 30px;
+        caret-color: #7f7f7f;
+
+        .SearchIcon {
+          height: 36px;
+          width: 36px;
+        }
+
+        input {
+          color: #676767;
+        }
+
+        input::placeholder {
+          font-size: 20px;
+          color: #7f7f7f;
+          letter-spacing: 0;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .HomeButtom {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .FilterBox {
+        padding: 5px;
+        font-family: '';
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+
+      .ButtomCard {
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        margin-top: 5px;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+
+        .ButtomuserInfoCard {
+          width: 456px;
+          border: 1px solid rgba(103, 103, 103, 0.2);
+          background: #232634;
+          margin-top: 20px;
+          margin-left: 10px;
+
+          .MainTitle {
+            font-family: '';
+            font-size: 16px;
+            color: #AA6EFF;
+            letter-spacing: 0;
+            font-weight: 600;
+            // padding-left: 15px;
+            padding-bottom: 10px;
+            cursor: pointer;
+          }
+
+          .CardUserContent {
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            font-weight: 400;
+
+            .Description {
+              word-wrap: break-word;
+              margin-top: 8px;
+              font-size: 14px;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 4;
+              /* Show three lines */
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: normal;
+            }
+
+            .amountInfo {
+              display: flex;
+              // justify-content: space-between;
+              // border-top: 1px solid rgba(103, 103, 103, 0.2);
+              padding-top: 5px;
+              color: #00CF26;
+
+              .BtmrightItem {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .amountInfoText {
+                  font-family: '';
+                  font-size: 18px;
+                  color: #00CF26;
+                  letter-spacing: 0;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+
+          // width: 392px;
+          .BtmUserInfoAll {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+
+            .BtmUserInfo {
+              width: 355px;
+
+              .amountInfoText {
+                font-family: '';
+                // font-size: 18px;
+                color: #00CF26;
+                letter-spacing: 0;
+                font-weight: 600;
+                margin-right: 5px;
+              }
+
+              .MainTitle {
+                display: flex;
+                color: #AA6EFF;
+                align-items: center;
+                font-size: 18px;
+              }
+
+              .createUser {
+                // margin-left: 10px;
+                // padding: 4px 8px 4px 8px;
+                color: #07cde0;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+
+                img {
+                  height: 20px;
+                  margin: 0 8px 0 8px;
+                }
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+            }
+
+            .ImgBox {
+              width: 150px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .BtmUserInfoItem {
+              display: flex;
+              justify-content: start;
+              height: 20px;
+
+              .BtmleftItem {
+                display: flex;
+                align-items: center;
+
+                .ItemInfoImg {
+                  width: 15px;
+                  height: 15px;
+                  margin-top: 5px;
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .lowBattery {
+              position: absolute;
+              width: 170px;
+              left: 50%;
+              transform: translate(-50%);
+              animation: blink 1.5s infinite;
+            }
+          }
+        }
+
+
+        .ButtomuserInfoCard:hover {
+          background-color: #3a3a5a;
+          box-shadow: 0px 0px 15px 5px rgba(177, 138, 255, 0.6);
+        }
+
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1180px) {
+  .HomeMain {
+    background-color: #1b1d28;
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+
+    .BuyText {
+      display: '';
+      word-wrap: break-word;
+    }
+
+    .HomeCenter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+
+      .MainTitle {
+        font-family: '';
+        font-size: 18px;
+        color: #AA6EFF;
+        letter-spacing: 0;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .userInfoCard {
+        width: 420px;
+        // border: 1px solid #676767;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        background: #232634;
+        border: 1px solid rgba(103, 103, 103, 0.2);
+
+        .subheade {
+          font-family: '';
+          font-size: 16px;
+          color: #ffc900;
+          letter-spacing: 0;
+          font-weight: 600;
+          width: 230px;
+          height: auto;
+        }
+
+        .CardUserContent {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          .CarduserIcon {
+            width: 100px;
+          }
+
+
+          .CardInfoList {
+            margin-left: 14px;
+
+            .CardInfoItem {
+              font-family: '';
+              font-size: 18px;
+              color: #ffffff;
+              letter-spacing: 0;
+              font-weight: normal;
+              width: auto;
+            }
+          }
+        }
+      }
+
+      .userInfoCard:hover {
+        background-color: #3a3a5a;
+        box-shadow: 0px 0px 15px 5px rgba(255, 215, 0, 0.6);
+      }
+
+      .SearchBox {
+        width: 581px;
+        height: 40px;
+        border: 1px solid rgba(104, 104, 104, 0.2);
+        background: #232634;
+        margin-top: 30px;
+        caret-color: #7f7f7f;
+
+        .SearchIcon {
+          height: 36px;
+          width: 36px;
+        }
+
+        input {
+          color: #676767;
+        }
+
+        input::placeholder {
+          font-size: 20px;
+          color: #7f7f7f;
+          letter-spacing: 0;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .HomeButtom {
+      margin-top: 20px;
+
+      .FilterBox {
+        padding: 5px;
+        font-family: '';
+        font-size: 20px;
+        color: #fff;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+
+      .ButtomCard {
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        margin-top: 5px;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+
+        .ButtomuserInfoCard {
+          width: 420px;
+          border: 1px solid #676767;
+          margin-top: 20px;
+          margin-left: 10px;
+
+          .CardUserContent {
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            font-weight: 400;
+
+            .BtmUserInfoAll {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .BtmUserInfo {
+                width: 355px;
+
+                .Description {
+                  word-wrap: break-word;
+                  margin-top: 8px;
+                  font-size: 14px;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 4;
+                  /* Show three lines */
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: normal;
+                  // padding: 0;
+                }
+
+                .amountInfoText {
+                  font-family: '';
+                  // font-size: 18px;
+                  color: #00CF26;
+                  letter-spacing: 0;
+                  font-weight: 600;
+                  margin-right: 5px;
+                }
+
+                .MainTitle {
+                  display: flex;
+                  align-items: center;
+                  font-size: 18px;
+                }
+
+                .createUser {
+                  // margin-left: 10px;
+                  // padding: 4px 8px 4px 8px;
+                  color: #07cde0;
+                  display: flex;
+                  align-items: center;
+                  font-size: 14px;
+
+                  img {
+                    height: 20px;
+                    margin: 0 8px 0 8px;
+                  }
+
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+
+              .ImgBox {
+                width: 150px;
+
+                img {
+                  width: 100%;
+                }
+              }
+
+              .BtmUserInfoItem {
+                display: flex;
+                justify-content: start;
+                height: 20px;
+
+                .BtmleftItem {
+                  display: flex;
+                  align-items: center;
+
+                  .ItemInfoImg {
+                    width: 15px;
+                    height: 15px;
+                    margin-top: 5px;
+                    margin-right: 10px;
+                  }
+                }
+              }
+
+              .lowBattery {
+                position: absolute;
+                width: 170px;
+                left: 50%;
+                transform: translate(-50%);
+                animation: blink 1.5s infinite;
+              }
+            }
+          }
+
+          background-color: #1b1d28;
+        }
+
+        .ButtomuserInfoCard:hover {
+          background-color: #3f3f5f;
+          box-shadow: 0px 0px 10px 2px rgba(177, 138, 255, 0.4);
+        }
+      }
+    }
+  }
+}
+
+@import url(./headerPhone.less);

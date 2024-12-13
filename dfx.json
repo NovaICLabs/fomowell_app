@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "dfx": "0.23.0",
+  "canisters": {
+    "fomowell_starter_assets": {
+      "dependencies": [],
+      "frontend": {
+        "entrypoint": "fomowell-frontend/index.html"
+      },
+      "source": ["fomowell-frontend/dist"],
+      "type": "assets"
+    },
+    "fomowell_launcher": {
+      "type": "custom",
+      "package": "fomowell-launcher",
+      "build": "ls",
+      "wasm": "fomowell-launcher/target/wasm32-unknown-unknown/release/fomowell-launcher.wasm.gz",
+      "candid": "fomowell-launcher/fomowell-launcher.did"
+    },
+    "fomowell_project": {
+      "type": "custom",
+      "package": "fomowell-project",
+      "build": "cd fomowell-project && ./build.sh && cd ..",
+      "wasm": "fomowell-project/target/wasm32-unknown-unknown/release/fomowell-project-opt-did.wasm.gz",
+      "candid": "fomowell-project/fomowell-project.did"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "ic": {
+      "providers": ["https://icp-api.io/"],
+      "type": "persistent"
+    },
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+type PoolInfo = record {
+  i : nat;
+  k : nat;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_amount : nat;
+  pool_type : text;
+  lp_lock : nat;
+  quote_user : nat;
+  lp_fee_rate : nat;
+  base_token_decimals : nat8;
+  quote_token_decimals : nat8;
+  base_user : nat;
+  quote_token : principal;
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : principal;
+  pool_version : opt nat8;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  is_single_pool : bool;
+  total_supply : nat;
+  is_my_pool : bool;
+};
+type PoolStatus = variant {
+  CREATE_BASE_INPUT;
+  CREATE_QUOTE_INPUT;
+  OFFLINE;
+  ROLLBACK_UNDONE;
+  CREATED;
+  ROLLBACK_DONE;
+  ONLINE;
+};
+type UnlockableInfo = record {
+  user_pid : principal;
+  unlock_time : nat64;
+  unlock_lp : nat;
+};
+type UserLpInfo = record {
+  user_base_amount : nat;
+  base_reserve : nat;
+  user_quote_amount : nat;
+  user_lp : nat;
+  quote_reserve : nat;
+  total_supply : nat;
+};
+service : (principal, principal, principal) -> {
+  cycles : () -> (nat64) query;
+  get_unlockable_lock_info : () -> (vec UnlockableInfo) query;
+  get_user_lp_info : (principal) -> (UserLpInfo) query;
+  pool_info : () -> (PoolInfo) query;
+  transfer : (principal, principal, nat) -> ();
+}

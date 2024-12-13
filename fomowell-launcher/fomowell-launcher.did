@@ -1,0 +1,149 @@
+type AddrConfig = record {
+  router_addr : principal;
+  oracle_addr : principal;
+  tx_addr : principal;
+  backend_addr : principal;
+  icpl_addr : principal;
+};
+type Context = record {
+  owner : principal;
+  icp_addr : principal;
+  last_create_fomo : CreateFomoSignalVo;
+  last_buy_sell_op : RecordSignalVo;
+  god_of_wells_idx : nat64;
+  fomo_canister_template : vec nat8;
+};
+type CreateFomoSignalVo = record {
+  user_name : text;
+  op_user_pid : principal;
+  user_avatar : text;
+  fomo_idx : nat64;
+  create_time : nat64;
+  token_logo : text;
+  fomo_name : text;
+};
+type FomoProject = record {
+  god_of_wells_time : opt nat64;
+  twitter_link : text;
+  sneed_dao_lock : opt nat;
+  market_cap : nat;
+  recently_reply_time : nat64;
+  ticker : text;
+  img_url : text;
+  dogmi_dao_lock : opt nat;
+  name : text;
+  recently_bump_time : nat64;
+  create_user_pid : principal;
+  description : text;
+  pool_progress_done_time : opt nat64;
+  telegram_link : text;
+  website : text;
+  fomo_idx : nat64;
+  fomo_pid : principal;
+  create_time : nat64;
+  reply_count : nat64;
+  token_pid : principal;
+  pool_progress : nat;
+  pool_pid : principal;
+  god_of_wells_progress : nat;
+};
+type FomoProjectCreate = record {
+  twitter_link : text;
+  sneed_dao_lock : opt nat;
+  ticker : text;
+  img_url : text;
+  dogmi_dao_lock : opt nat;
+  logo : text;
+  name : text;
+  description : text;
+  telegram_link : text;
+  website : text;
+};
+type FomoProjectSearchVo = record {
+  end : nat64;
+  start : nat64;
+  fomo_vec : vec FomoProject;
+};
+type FomoProjectVo = record {
+  start_idx : nat64;
+  end_idx : nat64;
+  fomo_vec : vec FomoProject;
+};
+type OrderType = variant { ASC; DESC };
+type Page = record { limit : nat64; start : nat64 };
+type PointHistory = record {
+  idx : nat64;
+  user_pid : principal;
+  time : nat64;
+  busi_name : text;
+  op_type : text;
+  amount : opt nat;
+};
+type RecordSignal = record {
+  fomo_idx : nat64;
+  buy_sell_op : text;
+  icp_amount : nat;
+  swap_hash : nat64;
+};
+type RecordSignalVo = record {
+  user_name : text;
+  swap_timestamp : opt nat64;
+  op_user_pid : principal;
+  user_avatar : text;
+  fomo_idx : nat64;
+  buy_sell_op : text;
+  icp_amount : nat;
+  fomo_ticker : text;
+};
+type Result = variant { Ok : FomoProject; Err : text };
+type Result_1 = variant { Ok : principal; Err : text };
+type Result_2 = variant { Ok; Err : text };
+type SearchParam = record {
+  order : OrderType;
+  sort : SortType;
+  "text" : text;
+  limit : nat64;
+  start : nat64;
+};
+type SortType = variant {
+  CreationTime;
+  ReplyCount;
+  BumpOrder;
+  LastReply;
+  MarketCap;
+};
+type UserEditObj = record { user_name : opt text; avatar : opt text };
+type UserProfile = record {
+  user_name : text;
+  user_pid : principal;
+  user_points : opt nat;
+  user_pre_reward_points : opt nat;
+  last_change_time : nat64;
+  user_all_spend_points : opt nat;
+  avatar : text;
+};
+service : (AddrConfig, principal) -> {
+  create_fomo : (FomoProjectCreate) -> (Result);
+  edit_user : (UserEditObj) -> (Result_1);
+  get_addr_config : () -> (AddrConfig) query;
+  get_buy_or_sell : () -> (RecordSignalVo) query;
+  get_dogmi_dao_addr : () -> (principal);
+  get_fomo_by_create_user_pid : (principal) -> (opt vec FomoProject) query;
+  get_fomo_by_fomo_idx : (nat64) -> (opt FomoProject) query;
+  get_fomo_by_fomo_pid : (principal) -> (opt FomoProject) query;
+  get_fomo_by_index : (Page) -> (FomoProjectVo) query;
+  get_fomo_context : () -> (Context) query;
+  get_god_of_wells : () -> (opt FomoProject) query;
+  get_points_history_by_index : (nat64, nat64) -> (
+      vec record { nat64; PointHistory },
+    ) query;
+  get_sneed_dao_addr : () -> (principal);
+  get_user : (principal) -> (opt UserProfile) query;
+  lock_pool : (principal) -> ();
+  ownership_transfer : (principal, opt principal) -> ();
+  search_fomos : (SearchParam) -> (FomoProjectSearchVo) query;
+  set_buy_or_sell : (RecordSignal) -> ();
+  spending_points : (principal, text) -> ();
+  topup_points : (nat) -> (Result_2);
+  update_progress : () -> ();
+}

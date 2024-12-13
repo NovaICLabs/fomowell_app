@@ -1,0 +1,47 @@
+{
+    "fomowell_starter_assets": {
+        "ic": "eqtk7-7aaaa-aaaag-albsq-cai"
+    },
+    "icpl_backend": {
+        "ic": "xc22h-kyaaa-aaaam-abqdq-cai"
+    },
+    "icpl_faucet": {
+        "ic": "wpu6j-fqaaa-aaaam-abqea-cai"
+    },
+    "icpl_icpl": {
+        "ic": "62u2u-yaaaa-aaaam-abrra-cai"
+    },
+    "icpl_oracle": {
+        "ic": "wtqey-sqaaa-aaaam-abqga-cai"
+    },
+    "icpl_router": {
+        "ic": "6uwx4-dqaaa-aaaam-abrqa-cai"
+    },
+    "icpl_starter_assets": {
+        "ic": "wivy5-iiaaa-aaaam-abqeq-cai"
+    },
+    "icpl_transactions": {
+        "ic": "fxk4i-baaaa-aaaam-abhua-cai"
+    },
+    "icrc1_ledger": {
+        "ic": "qypgn-oaaaa-aaaam-abpuq-cai"
+    },
+    "icrc2_ledger": {
+        "ic": "3riug-3qaaa-aaaam-ab5ba-cai"
+    },
+    "icp_ledger": {
+        "ic": "3riug-3qaaa-aaaam-ab5ba-cai"
+    },
+    "fomowell_launcher": {
+        "ic": "yi7jn-yyaaa-aaaam-acshq-cai"
+    },
+    "cycles_ledger": {
+        "ic": "um5iw-rqaaa-aaaaq-qaaba-cai"
+    },
+    "sneed": {
+        "ic": "lkwod-yg3ne-3g3kp-l5sxx-nvdw2-xqimy-4n4ud-ens54-ndx4z-3zfgz-6qe"
+    },
+    "dogmi": {
+        "ic": "lkwod-yg3ne-3g3kp-l5sxx-nvdw2-xqimy-4n4ud-ens54-ndx4z-3zfgz-6qe"
+    }
+}

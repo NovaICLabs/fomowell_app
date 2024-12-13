@@ -1,0 +1,38 @@
+{
+  "fomowell_starter_assets": {
+    "ic": "phwpg-fyaaa-aaaam-adu6q-cai"
+  },
+  "icpl_backend": {
+    "ic": "24gqi-uyaaa-aaaam-ab5gq-cai"
+  },
+  "icpl_icpl": {
+    "ic": "2oahr-yiaaa-aaaam-ab5fq-cai"
+  },
+  "icpl_oracle": {
+    "ic": "2vf3u-cqaaa-aaaam-ab5ha-cai"
+  },
+  "icpl_router": {
+    "ic": "2ackz-dyaaa-aaaam-ab5eq-cai"
+  },
+  "icpl_transactions": {
+    "ic": "2jbbf-vqaaa-aaaam-ab5fa-cai"
+  },
+  "icrc2_ledger": {
+    "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+  },
+  "icp_ledger": {
+    "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+  },
+  "fomowell_launcher": {
+    "ic": "52g6a-iaaaa-aaaam-acsza-cai"
+  },
+  "cycles_ledger": {
+    "ic": "um5iw-rqaaa-aaaaq-qaaba-cai"
+  },
+  "sneed": {
+    "ic": "ok64y-uiaaa-aaaag-qdcbq-cai"
+  },
+  "dogmi": {
+    "ic": "ni4my-zaaaa-aaaaq-aadra-cai"
+  }
+}

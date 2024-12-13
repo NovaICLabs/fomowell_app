@@ -1,0 +1,958 @@
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+    background-color: #fff;
+  }
+
+  10% {
+    transform: translateX(-20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  20% {
+    transform: translateX(20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  30% {
+    transform: translateX(-20px);
+    background-color: rgb(26, 26, 149);
+  }
+
+  40% {
+    transform: translateX(20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  50% {
+    transform: translateX(-20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  60% {
+    transform: translateX(20px);
+    background-color: rgb(38, 38, 155);
+  }
+
+  70% {
+    transform: translateX(-20px);
+    background-color: rgb(249, 208, 5);
+  }
+
+  80% {
+    transform: translateX(20px);
+    background-color: rgb(40, 159, 81);
+  }
+
+  90% {
+    transform: translateX(-20px);
+    background-color: rgb(44, 44, 154);
+  }
+
+  100% {
+    transform: translateX(0);
+    background-color: #fff;
+  }
+}
+
+.shakeable-div {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.shake {
+  animation: shake 0.8s;
+  /* Jitter animation duration */
+  animation-iteration-count: 3;
+  /* Number of jitter */
+}
+
+.HomeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  // .loginUserImg {
+  //   width: 53px;
+  //   height: 46px;
+  // }
+
+  .HowWorks {
+    width: 425px;
+    padding: 0;
+
+    .Title {
+      font-family: '';
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+  }
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+
+    .HeaderLogo {
+      width: 150px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 1179px) {
+    .headerRight {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      right: 10%;
+    }
+  }
+
+  @media (max-width: 1179px) {
+    .headerRight {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      right: 5%;
+    }
+  }
+
+  // .headerRight {
+  //   display: flex;
+  //   align-items: center;
+  //   position: fixed;
+  //   right: 5%;
+  // }
+  .TopUp {
+    font-size: 14px;
+    width: 60px;
+    margin-left: 2px;
+    // border: 1px solid #979797;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff400;
+    text-shadow: 0 0 10px red, 0 0 10px orange, 0 0 10px yellow, 0 0 10px green, 0 0 10px blue, 0 0 10px purple;
+    /*  */
+    cursor: pointer;
+  }
+
+  .connect {
+    // width: 200px;
+    padding: 0 12px;
+    height: 40px;
+    border: 1px solid #6d5ca6;
+    border-radius: 20px;
+    font-family: '';
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 35px;
+      margin-right: 6px;
+    }
+
+    .verticalline {
+      border-left: 1px solid #6d5ca6;
+      margin: 3px 0 3px 4px;
+    }
+
+    .leftUserToken {
+      display: flex;
+      align-items: center;
+
+      // width: 100px;
+      // flex-direction: row;
+      .userName {
+        white-space: nowrap;
+        /*  */
+      }
+    }
+
+    .rightUserToken {
+      display: flex;
+      flex-direction: column;
+
+      .token_and_img {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+
+        .Tokeninfo {
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          height: 30px;
+          width: 30px;
+          margin-right: 2px;
+        }
+
+
+      }
+    }
+  }
+
+  .BuyText {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #289f51;
+    text-transform: none;
+  }
+
+  // .BuyText:nth-child(2) {
+  //   background-color: #5d52de;
+  // }
+
+  .BuyText:nth-child(3) {
+    background-color: #5d52de;
+  }
+
+  .ConnectImg {
+    margin-left: 4.5%;
+    display: flex;
+    align-items: center;
+
+    // cursor: pointer;
+    .Right {
+      height: 22px;
+      width: auto;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .howit {
+      height: 28px;
+    }
+
+    .Right:nth-child(1) {
+      width: auto;
+      height: 28px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .ConnectWallet {
+    background-image: linear-gradient(270deg, #A25FFF 0%, #6931FF 100%);
+    width: 155px;
+    height: 35px;
+    font-size: 15px;
+    margin-left: 20px;
+    line-height: 16px;
+    cursor: pointer;
+  }
+}
+
+.walletRead {
+  width: 100%;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+  font-weight: 500;
+  background: #1b1d28;
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.InternetIdentity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: '';
+  // margin-right: 13px;
+  // margin-left: -10px;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 4px 0;
+  pointer-events: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #1b1d28;
+
+    .Text {
+      opacity: 1;
+    }
+  }
+
+  .Left {
+    display: flex;
+    align-items: center;
+  }
+
+  .SelectIcon {
+    padding-right: 10px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .Text {
+    opacity: 0.45;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  img {
+    padding-left: 5px;
+    width: 55px;
+    height: 55px;
+    opacity: 0.45;
+  }
+}
+
+// .InternetIdentity:hover {
+//   background-color: #1B1D28
+// }
+.walletActive {
+  pointer-events: auto;
+}
+
+.LoginUserSuccess {
+  display: flex;
+
+  .loginUserImg {
+    width: 53px;
+    height: 46px;
+  }
+
+  .loginNameEdit {
+    margin-left: 10px;
+
+    .EditInfo {
+      display: flex;
+    }
+
+    .Name {
+      font-family: '';
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 0;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .userToken {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 2px;
+
+      .token_and_img {
+        display: flex;
+        align-items: center;
+
+        .Tokeninfo {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .TopUp {
+        margin-left: 5px;
+        border: 1px solid #fff400;
+        padding: 4px;
+        // border: 1px solid #979797;
+        color: #fff400;
+        border-radius: 4px;
+        text-shadow: 0 0 10px red, 0 0 10px orange, 0 0 10px yellow, 0 0 10px green, 0 0 10px blue, 0 0 10px purple;
+        /*  */
+        cursor: pointer;
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+        margin-right: 2px;
+      }
+
+    }
+  }
+
+  .Edit {
+    width: 125px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0.62;
+    border: 1px solid rgba(151, 151, 151, 1);
+    border-radius: 4px;
+    padding-left: 5px;
+    color: #979797;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-top: 2px;
+  }
+}
+
+.UserPrincipleID {
+  display: flex;
+  background: #1b1d28;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #ffffff;
+  letter-spacing: 0;
+  font-weight: 500;
+  padding: 10px 0px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+
+  .IdItem {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+
+    .IconImg {
+      width: 12px;
+      height: 12px;
+      margin-left: 5px;
+      cursor: pointer;
+      color: #5d52de;
+    }
+  }
+}
+
+.Editphoto {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  .Name {
+    margin-left: 5px;
+    font-family: '';
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .UploadBtn {
+    margin-left: 5px;
+  }
+
+  .UploadImg {
+    width: 53px;
+    height: 46px;
+    margin-left: 10px;
+  }
+}
+
+.EditName {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  .Name {
+    margin-left: 5px;
+    font-family: '';
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .Nameinput {
+    margin-left: 10px;
+    background-color: #1b1d28;
+    border-radius: 8px;
+    font-family: '';
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+    width: 310px;
+    height: 32px;
+    padding-left: 10px;
+  }
+}
+
+.IpuntWarn {
+  font-family: '';
+  font-size: 12px;
+  color: #f7cd77;
+  letter-spacing: 0;
+  font-weight: 600;
+  margin-left: 100px;
+  margin-top: 8px;
+}
+
+.EditButtom {
+  margin-top: 15px;
+  display: flex;
+  justify-content: right;
+
+  .closeBtn {
+    border: 1px solid rgba(99, 99, 99, 1);
+    border-radius: 4px;
+    opacity: 0.68;
+    font-family: '';
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+
+  .SaveBtn {
+    margin-left: 15px;
+    font-family: '';
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 600;
+    background-image: linear-gradient(270deg, #a25fff 0%, #6931ff 100%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    text-transform: none;
+    line-height: 15px;
+    justify-content: center;
+
+    img {
+      width: 12px;
+      margin-left: 2px;
+      transform: translate(2px, 0.5px);
+    }
+  }
+}
+
+.WalletHowWorks {
+  touch-action: none;
+  outline: none !important;
+  width: 425px;
+  padding: 20px;
+}
+
+.HowWorks {
+  touch-action: none;
+  outline: none !important;
+}
+
+.sendICP {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+
+  .icpImgNum {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    margin-right: 8px;
+  }
+
+  .btnSend {
+    font-size: 14px;
+    border: 1px solid #7a8ac5;
+    color: #7a8ac5;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1491px) {
+  .BuyText {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    text-transform: none;
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1490px) {
+  .HowWorks {
+    width: 425px;
+
+    .Title {
+      font-family: '';
+      font-size: 20px;
+      color: #ffffff;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+  }
+
+  .BuyText:nth-child(3) {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    text-transform: none;
+    display: none;
+  }
+
+  .ReadContent {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 501px) {
+  .DisUser {
+    height: 36px;
+    width: 200px;
+  }
+
+  .BuyText:nth-child(2) {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    text-transform: none;
+    display: none;
+  }
+
+  .BuyText:nth-child(3) {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    display: none;
+  }
+
+  .HomeHeader {
+    height: 48px;
+
+    .HeaderLogo {
+      width: 130px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .ConnectWallet {
+      width: 170px;
+      font-size: 14px;
+    }
+
+    .connect {
+      // width: 140px;
+      height: 38px;
+      // line-height: 38px;
+
+      img {
+        width: 30px;
+        margin-right: 6px;
+      }
+
+      .rightUserToken {
+        display: flex;
+        flex-direction: column;
+
+        .token_and_img {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+
+          .Tokeninfo {
+            display: flex;
+            align-items: center;
+          }
+
+          img {
+            height: 28px;
+            width: 28px;
+            margin-right: 2px;
+          }
+        }
+
+      }
+    }
+
+    .ConnectImg {
+      .Right {
+        height: 20px;
+        width: auto;
+      }
+
+      .howit {
+        height: 28px;
+      }
+    }
+  }
+
+  .HowWorks {
+    width: 410px;
+  }
+
+  // .readyStep {
+  //   // transform: translate(-50%);
+  // }
+  .WalletHowWorks {
+    width: 300px;
+    padding: 20px;
+    touch-action: none;
+  }
+
+  .ReadContent {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .DisUser {
+    height: 36px;
+    width: 200px;
+  }
+
+  .BuyText:nth-child(2) {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    text-transform: none;
+    display: none;
+  }
+
+  .BuyText:nth-child(3) {
+    height: 32px;
+    font-family: '';
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-left: 25px;
+    background-color: #655ea7;
+    display: none;
+  }
+
+  .HomeHeader {
+    height: 48px;
+
+    .HomeHeader {
+      height: 48px;
+
+      .headerLeft {
+        .HeaderLogo {
+          width: 100px;
+          height: auto;
+          cursor: pointer;
+        }
+      }
+
+
+      .ConnectWallet {
+        width: 100px;
+        height: 34px;
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      .connect {
+        // width: 140px;
+        height: 38px;
+        // line-height: 38px;
+
+        img {
+          width: 30px;
+          margin-right: 6px;
+        }
+
+        .rightUserToken {
+          display: flex;
+          flex-direction: column;
+
+          .token_and_img {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+
+            .Tokeninfo {
+              display: flex;
+              align-items: center;
+            }
+
+            img {
+              height: 28px;
+              width: 28px;
+              margin-right: 2px;
+            }
+          }
+        }
+      }
+
+      .ConnectImg {
+        .Right {
+          width: 18px;
+          height: auto;
+        }
+
+        .howit {
+          width: 25px;
+          height: auto;
+        }
+      }
+    }
+
+    .ConnectWallet {
+      width: 110px;
+      font-size: 12px;
+
+    }
+
+    .connect {
+      // width: 140px;
+      height: 38px;
+      // line-height: 38px;
+
+      img {
+        width: 30px;
+        margin-right: 6px;
+      }
+
+      .rightUserToken {
+        display: flex;
+        flex-direction: column;
+
+        .token_and_img {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+
+          .Tokeninfo {
+            display: flex;
+            align-items: center;
+          }
+
+          img {
+            height: 28px;
+            width: 28px;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+
+    .ConnectImg {
+      .Right {
+        height: 18px;
+        width: auto;
+      }
+
+      .howit {
+        height: 25px;
+      }
+    }
+  }
+
+  .HowWorks {
+    width: 300px;
+  }
+
+  // .readyStep {
+  //   // transform: translate(-50%);
+  // }
+  .WalletHowWorks {
+    width: 300px;
+    padding: 20px;
+    touch-action: none;
+  }
+
+  .ReadContent {
+    padding: 0;
+  }
+
+  .UserPrincipleID {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1b1d28;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 0;
+    font-weight: 500;
+    padding: 10px 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-right: 10px;
+
+    .IdItem {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+
+      .IconImg {
+        width: 12px;
+        height: 12px;
+        margin-left: 5px;
+        cursor: pointer;
+        color: #5d52de;
+      }
+    }
+  }
+
+}
+
+@media (max-height: 600px) {
+  .WalletHowWorks {
+    height: 300px;
+
+    // .howit {
+    //   height: 28px;
+    // }
+  }
+}

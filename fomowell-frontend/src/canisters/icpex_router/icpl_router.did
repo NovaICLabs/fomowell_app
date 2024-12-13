@@ -1,0 +1,338 @@
+type Account = record { owner : principal; subaccount : opt vec nat8 };
+type AddrConfig = record {
+  router_addr : principal;
+  oracle_addr : principal;
+  tx_addr : principal;
+  backend_addr : principal;
+  icpl_addr : principal;
+};
+type CPool = record {
+  i : nat;
+  k : nat;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_fee_rate : nat;
+  shares_ledger : DIP20;
+  quote_token : IToken;
+  expired_lock_ledger : vec record { principal; nat; nat64 };
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : IToken;
+  base_decimals : nat8;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  quote_decimals : nat8;
+};
+type DIP20 = record {
+  decimals : nat8;
+  flat_fee : bool;
+  fee_to : principal;
+  owner : principal;
+  logo : text;
+  name : text;
+  mint_on : bool;
+  burn_rate : nat;
+  fee_rate : nat;
+  burn_on : bool;
+  allowances : vec record { principal; vec record { principal; nat } };
+  flat_burn_fee : bool;
+  total_supply : nat;
+  symbol : text;
+  balances : vec record { principal; nat };
+};
+type IToken = record { cid : principal };
+type Operation = variant {
+  AddLiquidity;
+  Approve;
+  RemoveTokenController;
+  CreateToken;
+  Burn;
+  Mint;
+  Swap;
+  CanisterCreated;
+  CreatePool;
+  CanisterCalled;
+  Transfer;
+  TransferFrom;
+  RemoveLiquidity;
+};
+type PPool = record {
+  i : nat;
+  k : nat;
+  r_state : RState;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_fee_rate : nat;
+  quote_target : nat;
+  base_target : nat;
+  quote_token : IToken;
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : IToken;
+  base_decimals : nat8;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  quote_decimals : nat8;
+};
+type PoolAmountInfo = record {
+  base_token_price : nat;
+  lp_amount : nat;
+  lp_lock : nat;
+  lp_fee_rate : nat;
+  base_token_decimals : nat;
+  quote_token_decimals : nat;
+  quote_token : principal;
+  base_token : principal;
+  quote_token_price : nat;
+  quote_amount : nat;
+  base_amount : nat;
+  pool_address : principal;
+  mt_fee_rate : nat;
+  total_supply : nat;
+};
+type PoolExecuteType = variant {
+  PPOOL : PPool;
+  UNKNOWN;
+  CPOOL : CPool;
+  SPOOL : StablePool;
+};
+type PoolInfo = record {
+  i : nat;
+  k : nat;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_amount : nat;
+  pool_type : text;
+  lp_lock : nat;
+  quote_user : nat;
+  lp_fee_rate : nat;
+  base_token_decimals : nat8;
+  quote_token_decimals : nat8;
+  base_user : nat;
+  quote_token : principal;
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : principal;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  is_single_pool : bool;
+  total_supply : nat;
+  is_my_pool : bool;
+};
+type PoolInfoConfig = record {
+  i : nat;
+  k : nat;
+  r_state : text;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  pool_type : text;
+  lp_fee_rate : nat;
+  quote_target : nat;
+  base_target : nat;
+  quote_token : principal;
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : principal;
+  base_decimals : nat8;
+  pool_status : text;
+  mt_fee_rate : nat;
+  quote_decimals : nat8;
+  balances : vec record { principal; nat };
+};
+type PoolOrder = record {
+  i : nat;
+  k : nat;
+  base_in_amount : nat;
+  quote_in_amount : nat;
+  deadline : nat64;
+  fee_rate : nat;
+  quote_token_addr : principal;
+  caller : principal;
+  base_token_addr : principal;
+};
+type PoolStatus = variant {
+  CREATE_BASE_INPUT;
+  CREATE_QUOTE_INPUT;
+  OFFLINE;
+  ROLLBACK_UNDONE;
+  CREATED;
+  ROLLBACK_DONE;
+  ONLINE;
+};
+type PoolTxRecord = record {
+  to : principal;
+  status : TransactionStatus;
+  base_reserve : opt float64;
+  pool : opt principal;
+  quote_price : float64;
+  base_price : float64;
+  quote_token : principal;
+  operation : Operation;
+  timestamp : nat64;
+  base_price_cumulative_last : opt float64;
+  quote_reserve : opt float64;
+  base_token : principal;
+  quote_amount : float64;
+  caller : opt principal;
+  base_amount : float64;
+  tx_hash : nat64;
+  tx_hash_str : text;
+  fail_msg : text;
+};
+type RState = variant { ONE; AboveOne; BelowOne };
+type Result = variant { Ok : record { principal; nat }; Err : text };
+type Result_1 = variant { Ok : float32; Err : text };
+type Result_2 = variant { Ok; Err : text };
+type Result_3 = variant {
+  Ok : record { nat; vec principal; nat8; nat; nat };
+  Err : text;
+};
+type Result_4 = variant { Ok : nat64; Err : text };
+type Router = record {
+  fee_token : IToken;
+  owner : principal;
+  user_pools : vec record { principal; vec principal };
+  icpex_wasm : vec nat8;
+  default_mt_fee_rate : nat;
+};
+type StablePool = record {
+  i : nat;
+  k : nat;
+  r_state : RState;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_fee_rate : nat;
+  quote_target : nat;
+  shares_ledger : DIP20;
+  base_target : nat;
+  quote_token : IToken;
+  expired_lock_ledger : vec record { principal; nat; nat64 };
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : IToken;
+  base_decimals : nat8;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  quote_decimals : nat8;
+};
+type SwapOrder = record {
+  base_from_token : principal;
+  base_from_amount : nat;
+  directions : nat64;
+  swap_caller : principal;
+  deadline : nat64;
+  base_min_return_amount : nat;
+  base_to_token : principal;
+  pairs : vec principal;
+};
+type TransactionStatus = variant {
+  Failed;
+  Succeeded;
+  BaseTrans;
+  QuoteTrans;
+  Rollback;
+  Pending;
+};
+service : (principal, principal) -> {
+  addInnerLiquidity : (principal, nat, nat, nat, nat64, PoolTxRecord) -> (
+      nat,
+      nat,
+      nat,
+    );
+  addLiquidity : (principal, nat, nat, nat, nat64) -> (nat, nat, nat);
+  addPrivateLiquidity : (principal, nat, nat, nat64) -> (nat, nat);
+  addStableLiquidity : (principal, nat, nat, nat, nat64) -> (nat, nat, nat);
+  adminData : () -> (
+      Router,
+      AddrConfig,
+      vec record { principal; PoolExecuteType },
+    ) query;
+  adminUpdateCanister : () -> () query;
+  adminUpdateLp : (principal, nat, principal) -> ();
+  adminUpdatePoolParam : (principal, nat, nat) -> ();
+  adminUpdateTokenCache : (principal) -> ();
+  createCommonPool : (principal, principal, nat, nat, nat, nat, nat, nat64) -> (
+      Result,
+    );
+  createPrivatePool : (
+      principal,
+      principal,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat64,
+    ) -> (Result);
+  createStablePool : (principal, principal, nat, nat, nat, nat, nat, nat64) -> (
+      Result,
+    );
+  cycles : () -> (nat64) query;
+  getAllPoolInfo : () -> (vec PoolInfoConfig) query;
+  getLp : (principal, principal) -> (nat, nat, nat, nat, nat, nat) query;
+  getMidPrice : (principal) -> (nat) query;
+  getPoolInfo : (principal, principal) -> (PoolInfo) query;
+  getPoolsAmountInfo : () -> (vec PoolAmountInfo, nat64) query;
+  getPoolsAmountInfoUncache : () -> (vec PoolAmountInfo, nat64);
+  getPoolsInfo : (principal) -> (vec PoolInfo) query;
+  getSubaccount : () -> (Account) query;
+  getSubaccountAdmin : (principal) -> (Account) query;
+  getTimePrice : (principal) -> (nat) query;
+  get_deviation_rate : (nat, nat, principal, nat64) -> (Result_1) query;
+  initAddrConfig : (principal, principal) -> ();
+  innerAddPrivateLiquidity : (principal, nat, nat, nat64, PoolTxRecord) -> (
+      nat,
+      nat,
+    );
+  innerAddStableLiquidity : (principal, nat, nat, nat, nat64, PoolTxRecord) -> (
+      nat,
+      nat,
+      nat,
+    );
+  innerCreateCommonPool : (PoolOrder, PoolTxRecord) -> (principal, nat);
+  innerCreatePrivatePool : (PoolOrder, PoolTxRecord) -> (principal, nat);
+  innerCreateStablePool : (PoolOrder, PoolTxRecord) -> (principal, nat);
+  innerSellShares : (nat, principal, nat, nat, nat, nat64, PoolTxRecord) -> (
+      nat,
+      nat,
+    );
+  innerSwapTokenToToken : (SwapOrder) -> (nat);
+  lockLiquidity : (principal, nat, nat64) -> (Result_2);
+  markIcrc1SubWallet : (principal, principal) -> ();
+  platformWithdraw : (nat, principal, principal) -> (Result_2);
+  queryAddShareBase : (nat, principal) -> (nat, nat, nat, nat) query;
+  queryAddShareQuote : (nat, principal) -> (nat, nat, nat, nat) query;
+  querySellBase : (principal, nat) -> (nat, nat, nat, RState, nat) query;
+  querySellQuote : (principal, nat) -> (nat, nat, nat, RState, nat) query;
+  querySellShares : (nat, principal, principal) -> (nat, nat, nat, nat) query;
+  quote : (principal, principal, nat, nat64) -> (Result_3) query;
+  resetParamPrivatePool : (principal, nat, nat, nat) -> ();
+  routerPoolInfo : () -> (vec record { principal; vec principal }) query;
+  sellShares : (nat, principal, nat, nat, nat, nat64) -> (nat, nat);
+  setFeeToken : (principal) -> ();
+  setTxBucket : (principal) -> ();
+  swapTokenToToken : (
+      principal,
+      principal,
+      nat,
+      nat,
+      vec principal,
+      nat64,
+      nat64,
+    ) -> (Result_4);
+  transferOwnShip : (principal) -> ();
+  updatePool : (principal) -> (nat);
+  updatePoolControllers : (principal, principal) -> ();
+  withdrawPoolToken : (principal, principal, principal, nat) -> ();
+  withdrawSubAccountToken : (principal, nat) -> (Result_2);
+}

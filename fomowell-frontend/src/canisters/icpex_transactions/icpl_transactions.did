@@ -1,0 +1,97 @@
+type Operation = variant {
+  AddLiquidity;
+  Approve;
+  RemoveTokenController;
+  CreateToken;
+  Burn;
+  Mint;
+  Swap;
+  CanisterCreated;
+  CreatePool;
+  CanisterCalled;
+  Transfer;
+  TransferFrom;
+  RemoveLiquidity;
+};
+type OutTx = record { tx : TX; index : nat64 };
+type PoolTxRecord = record {
+  to : principal;
+  status : TransactionStatus;
+  base_reserve : opt float64;
+  pool : opt principal;
+  quote_price : float64;
+  base_price : float64;
+  quote_token : principal;
+  operation : Operation;
+  timestamp : nat64;
+  base_price_cumulative_last : opt float64;
+  quote_reserve : opt float64;
+  base_token : principal;
+  quote_amount : float64;
+  caller : opt principal;
+  base_amount : float64;
+  tx_hash : nat64;
+  tx_hash_str : text;
+  fail_msg : text;
+};
+type SwapTxRecord = record {
+  to_token : opt principal;
+  status : TransactionStatus;
+  input_amount : opt float64;
+  from_token : opt principal;
+  directions : opt nat64;
+  base_reserve : opt float64;
+  lp_fee_volumn : opt float64;
+  swap_hash_str : text;
+  volumn : opt float64;
+  receive_amount : opt float64;
+  quote_token_decimals : opt nat;
+  mt_fee_volumn : opt float64;
+  base_min_return_amount : opt float64;
+  timestamp : nat64;
+  base_price_cumulative_last : opt float64;
+  quote_reserve : opt float64;
+  lp_fee_amount : opt float64;
+  caller : opt principal;
+  pairs : opt vec principal;
+  price : opt float64;
+  swap_hash : nat64;
+  fail_msg : opt text;
+  mt_fee_amount : opt float64;
+};
+type TX = variant {
+  PoolTx : PoolTxRecord;
+  TokenTx : TokenTxRecord;
+  SwapTx : SwapTxRecord;
+};
+type TokenTxRecord = record {
+  to : principal;
+  fee : float64;
+  status : TransactionStatus;
+  token : principal;
+  from : principal;
+  operation : Operation;
+  timestamp : nat64;
+  caller : opt principal;
+  amount : float64;
+};
+type TransactionIndex = record { start_idx : nat64; end_idx : nat64 };
+type TransactionStatus = variant {
+  Failed;
+  Succeeded;
+  BaseTrans;
+  QuoteTrans;
+  Rollback;
+  Pending;
+};
+service : (principal) -> {
+  addTx : (TX) -> ();
+  cycles : () -> (nat64) query;
+  getLastTransactionsByIndex : (nat64, nat64) -> (
+      vec record { nat64; TX },
+    ) query;
+  getLastTransactionsTxByIndex : (nat64, nat64) -> (vec OutTx) query;
+  get_transaction_idx : () -> (TransactionIndex) query;
+  querySwapStatus : (nat64) -> (vec SwapTxRecord) query;
+  querySwapStatusStr : (text) -> (vec SwapTxRecord) query;
+}

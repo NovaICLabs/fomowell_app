@@ -1,0 +1,41 @@
+{
+  "__Candid_UI": {
+    "local": "bd3sg-teaaa-aaaaa-qaaba-cai"
+  },
+  "icpl_backend": {
+    "local": "bw4dl-smaaa-aaaaa-qaacq-cai"
+  },
+  "icpl_faucet": {
+    "local": "by6od-j4aaa-aaaaa-qaadq-cai"
+  },
+  "icpl_icpl": {
+    "local": "br5f7-7uaaa-aaaaa-qaaca-cai"
+  },
+  "icpl_oracle": {
+    "local": "b77ix-eeaaa-aaaaa-qaada-cai"
+  },
+  "icpl_router": {
+    "local": "bkyz2-fmaaa-aaaaa-qaaaq-cai"
+  },
+  "icpl_transactions": {
+    "local": "be2us-64aaa-aaaaa-qaabq-cai"
+  },
+  "icrc1_ledger": {
+    "local": "asrmz-lmaaa-aaaaa-qaaeq-cai"
+  },
+  "icrc2_ledger": {
+    "local": "a3shf-5eaaa-aaaaa-qaafa-cai"
+  },
+  "ledger": {
+    "local": "avqkn-guaaa-aaaaa-qaaea-cai"
+  },
+  "xtc": {
+    "local": "ajuq4-ruaaa-aaaaa-qaaga-cai"
+  },
+  "fomowell_launcher": {
+    "local": "aovwi-4maaa-aaaaa-qaagq-cai"
+  },
+  "cycles_ledger": {
+    "local": "um5iw-rqaaa-aaaaq-qaaba-cai"
+  }
+}
